@@ -146,7 +146,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/03/windows%E4%B8%8Agit-github%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -160,7 +160,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/03/windows%E4%B8%8Agit-github%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="post-title-link" itemprop="url">windows上git/github使用手册</a>
+            <a href="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">Windows面向新手git/github安装配置详细指南</a>
         </h2>
 
         <div class="post-meta">
@@ -171,7 +171,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-03-03 21:56:27 / Modified: 21:56:35" itemprop="dateCreated datePublished" datetime="2021-03-03T21:56:27+08:00">2021-03-03</time>
+              <time title="Created: 2021-03-03 22:53:29 / Modified: 23:03:05" itemprop="dateCreated datePublished" datetime="2021-03-03T22:53:29+08:00">2021-03-03</time>
             </span>
 
           
@@ -185,13 +185,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Git-amp-Github使用手册"><a href="#Git-amp-Github使用手册" class="headerlink" title="Git&amp;Github使用手册"></a>Git&amp;Github使用手册</h1><h4 id="git安装配置："><a href="#git安装配置：" class="headerlink" title="git安装配置："></a>git安装配置：</h4><p>启动git setup.exe安装，一路next即可。</p>
-<img src="/Users/wesrindo/Library/Application Support/typora-user-images/image-20200506233210461.png" alt="image-20200506233210461" style="zoom:50%;" />
+          <h4 id="git安装配置："><a href="#git安装配置：" class="headerlink" title="git安装配置："></a>git安装配置：</h4><p>启动git setup.exe安装，一路next即可。</p>
+<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233210461.png" alt="image-20200506233210461" style="zoom:50%;">
 
 
 
 <p>测试是否安装完毕，在cmd（命令提示符）中输入git，如果像下图一样出现很多用法的提示，说明已经安装完毕。</p>
-<img src="/Users/wesrindo/Library/Application Support/typora-user-images/image-20200506233524730.png" alt="image-20200506233524730" style="zoom:50%;" />
+<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233524730.png" alt="image-20200506233524730" style="zoom:50%;">
 
 <h4 id="设置ssh密钥"><a href="#设置ssh密钥" class="headerlink" title="设置ssh密钥:"></a>设置ssh密钥:</h4><ul>
 <li><p>在cmd生成ssh密钥</p>
@@ -200,23 +200,23 @@
 <p>cmd输入如下命令(username是你注册的Github用户名):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>![image-20200506235424303](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200506235424303.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506235424303.png" alt="image-20200506235424303"></p>
 </li>
 <li><p>配置邮箱</p>
 <p>cmd输入如下命令(usermail是你注册的Github邮箱):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;usermail&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>![image-20200506235346002](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200506235346002.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506235346002.png" alt="image-20200506235346002"></p>
 </li>
 <li><p>生成ssh</p>
 <p>cmd输入如下命令生成ssh，让输入就敲回车即可，总共三个回车。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
 
-<p>![image-20200506235823667](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200506235823667.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506235823667.png" alt="image-20200506235823667"></p>
 <p>在上述命令行中显示的保存的位置找到如下两个文件：</p>
-<p>![image-20200506235932072](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200506235932072.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506235932072.png" alt="image-20200506235932072"></p>
 <p>打开id_rsa.pub，复制其中内容：</p>
-<p>![image-20200507000112012](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507000112012.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507000112012.png" alt="image-20200507000112012"></p>
 </li>
 </ul>
 </li>
@@ -224,53 +224,53 @@
 <p>在Github点击自己头像-&gt;settings-&gt;SSH and GPG keys-&gt;New SSH key</p>
 </li>
 </ul>
-<img src="/Users/wesrindo/Library/Application Support/typora-user-images/image-20200506233848382.png" alt="image-20200506233848382" style="zoom:50%;" />
+<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233848382.png" alt="image-20200506233848382" style="zoom:50%;">
 
-<img src="/Users/wesrindo/Library/Application Support/typora-user-images/image-20200506233940438.png" alt="image-20200506233940438" style="zoom:50%;" />
+<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233940438.png" alt="image-20200506233940438" style="zoom:50%;">
 
-<p>​    title可以自己随便取一个名字，key中把刚才复制的ssh粘贴进去即可。点击Add SSH key便完成了ssh的添加：    ![image-20200507000311098](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507000311098.png)</p>
-<p>![image-20200507000432216](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507000432216.png)</p>
+<p>​    title可以自己随便取一个名字，key中把刚才复制的ssh粘贴进去即可。点击Add SSH key便完成了ssh的添加：    <img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507000311098.png" alt="image-20200507000311098"></p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507000432216.png" alt="image-20200507000432216"></p>
 <p>测试是否配置成功。cmd中输入如下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 <p>出现如下说明成功：</p>
-<p>![image-20200507001229824](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507001229824.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507001229824.png" alt="image-20200507001229824"></p>
 <p>如果出现如下错误，就把原来的两个id_rsa文件都删掉，命令行重复<code>ssh-keygen -t rsa</code>命令生成一个新的，github上的ssh也同样删除重建。</p>
-<p>![image-20200507000856744](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507000856744.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507000856744.png" alt="image-20200507000856744"></p>
 <h4 id="建立第一个版本库"><a href="#建立第一个版本库" class="headerlink" title="建立第一个版本库"></a>建立第一个版本库</h4><ul>
 <li><p>新建远程库</p>
 <p>头像-&gt;Your repositories可以看到你所有仓库，点击new可以新建仓库。新建的流程你已经熟悉，不再赘述。</p>
 </li>
 </ul>
-<img src="/Users/wesrindo/Library/Application Support/typora-user-images/image-20200506233848382.png" alt="image-20200506233848382" style="zoom:50%;" />
+<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233848382.png" alt="image-20200506233848382" style="zoom:50%;">
 
 <ul>
 <li><p>clone远程仓库到本地</p>
 <p>点开你新建的远程仓库。点击Clone or Download：</p>
-<p>![image-20200507002031663](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507002031663.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507002031663.png" alt="image-20200507002031663"></p>
 <p>你有两种方式clone这个仓库，直接下载ZIP或者命令行clone。命令行clone的方法如下</p>
 <ul>
 <li><p>命令行导航到你想要存放本地仓库的目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列出当前目录下的文件</span></span><br><span class="line">dir</span><br><span class="line"></span><br><span class="line"><span class="comment">#进入目录</span></span><br><span class="line"><span class="built_in">cd</span> [folder]</span><br><span class="line"></span><br><span class="line"><span class="comment">#返回上级目录</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"></span><br><span class="line"><span class="comment">#访问别的磁盘（如D:\）</span></span><br><span class="line">D:</span><br></pre></td></tr></table></figure>
 
-<p>![image-20200507002834918](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507002834918.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507002834918.png" alt="image-20200507002834918"></p>
 </li>
 <li><p>复制远程仓库的HTTPS/SSH key</p>
-<p>![image-20200507003019857](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507003019857.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507003019857.png" alt="image-20200507003019857"></p>
 </li>
 <li><p>命令行clone</p>
 <p>命令行输入如下命令，git clone [复制的远程库的HTTPS/SSH key]：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:username/RepositoryName.git</span><br></pre></td></tr></table></figure>
 
-<p>![image-20200507003410852](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507003410852.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507003410852.png" alt="image-20200507003410852"></p>
 </li>
 <li><p>查看clone下来的本地库</p>
 <p>可以看到那个位置下出现了与远程库同名的文件夹，里面有远程库里的内容。</p>
-<p>![image-20200507003515442](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507003515442.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507003515442.png" alt="image-20200507003515442"></p>
 <p>勾选“显示隐藏文件夹“后会看到.git文件夹，说明这个MyWorks是一个有git版本管理的文件夹。</p>
-<p>![image-20200507003826324](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507003826324.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507003826324.png" alt="image-20200507003826324"></p>
 <p>在这个文件夹里就可以放入你需要版本管理的文件和文件夹了。</p>
-<p>![image-20200507004321512](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507004321512.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507004321512.png" alt="image-20200507004321512"></p>
 </li>
 </ul>
 </li>
@@ -278,24 +278,24 @@
 <h4 id="git版本管理基本操作"><a href="#git版本管理基本操作" class="headerlink" title="git版本管理基本操作"></a>git版本管理基本操作</h4><p>在MyWorks目录下输入命令查看git状态：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
 
-<p>![image-20200507004721133](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507004721133.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507004721133.png" alt="image-20200507004721133"></p>
 <p>这说明，worl1.txt、worl2.docx和文件夹work_test/都是新出现在这个文件夹里的文件，它们是untracked（未被追踪）的。</p>
 <p>输入如下命令把它们加入追踪，也就是加入版本管理：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add [filename/folder_name]</span><br></pre></td></tr></table></figure>
 
-<p>![image-20200507005136196](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507005136196.png)‘</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507005136196.png" alt="image-20200507005136196">‘</p>
 <p>再次输入<code>git status</code>查看到这几个文件已经变绿，被探测到更改。</p>
-<p>![image-20200507005308543](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507005308543.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507005308543.png" alt="image-20200507005308543"></p>
 <p>输入如下命令提交这些文件的更改：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;你对这次提交的注释&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>![image-20200507005518640](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507005518640.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507005518640.png" alt="image-20200507005518640"></p>
 <p>输入<code>git log</code>查看你提交的更改记录，你可以看到提交时间和注释。</p>
-<p>![image-20200507005623129](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507005623129.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507005623129.png" alt="image-20200507005623129"></p>
 <h4 id="push（推送）到远程仓库（Github上的仓库）"><a href="#push（推送）到远程仓库（Github上的仓库）" class="headerlink" title="push（推送）到远程仓库（Github上的仓库）"></a>push（推送）到远程仓库（Github上的仓库）</h4><ul>
 <li><p>设置远程（可跳过）</p>
 <p>cmd中输入<code>git remote</code>可以查看到你当前的远程：</p>
-<p>![image-20200507010511221](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507010511221.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507010511221.png" alt="image-20200507010511221"></p>
 <p>因为是从远程clone下来的，所以已经有一个默认的origin远程名链接到远程库。</p>
 <p>如果需要新建远程，输入如下命令即可：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:username/RepositoryName.git</span><br></pre></td></tr></table></figure>
@@ -307,9 +307,9 @@
 <p>输入如下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push 远程名</span><br></pre></td></tr></table></figure>
 
-<p>![image-20200507010802725](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507010802725.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507010802725.png" alt="image-20200507010802725"></p>
 <p>在github上便可以看到更改的文件已经上传：</p>
-<p>![image-20200507010930164](/Users/wesrindo/Library/Application Support/typora-user-images/image-20200507010930164.png)</p>
+<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507010930164.png" alt="image-20200507010930164"></p>
 </li>
 </ul>
 

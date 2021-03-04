@@ -146,6 +146,284 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="TriNauD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三角的技术笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/" class="post-title-link" itemprop="url">前端实习心得2 - 修复bug&添加功能</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-04 23:07:52 / Modified: 23:28:23" itemprop="dateCreated datePublished" datetime="2021-03-04T23:07:52+08:00">2021-03-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="修复bug"><a href="#修复bug" class="headerlink" title="修复bug"></a>修复bug</h2><h3 id="修复深色模式下组件样式问题"><a href="#修复深色模式下组件样式问题" class="headerlink" title="修复深色模式下组件样式问题"></a>修复深色模式下组件样式问题</h3><!--12.20～12.27 & 1.24～1.31-->
+<ul>
+<li><p>解决方式</p>
+<ul>
+<li>在高阶组件hoc中使用store里的数据，传进被包裹组件中，用classnames库动态判断是否为组件添加class。<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304141748579.png" alt="image-20210304141748579"></li>
+</ul>
+</li>
+<li><p>遇到困难</p>
+<ul>
+<li>困难描述：<ul>
+<li>某个background color需要useDarkMode和highlight共同决定，而嵌套条件选择语句不被允许。</li>
+</ul>
+</li>
+<li>解决方法：<ul>
+<li>在该组件类中写了一个专门决定background color的函数并在return的组件的属性中调用。<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304143746664.png" alt="image-20210304143746664"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="修复lint问题"><a href="#修复lint问题" class="headerlink" title="修复lint问题"></a>修复lint问题</h3><!--12.20～12.27-->
+<p>这个问题我没法解释，应该是改了一下版本。<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304144241022.png" alt="image-20210304144241022" style="zoom:50%;"></p>
+<h3 id="修复播放遮罩组件层级混乱问题"><a href="#修复播放遮罩组件层级混乱问题" class="headerlink" title="修复播放遮罩组件层级混乱问题"></a>修复播放遮罩组件层级混乱问题</h3><!--1.12-->
+<ul>
+<li>学到的内容<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/llll789789/article/details/97562099">彻底搞懂CSS层叠上下文、层叠等级、层叠顺序、z-index</a><ul>
+<li>层叠上下文<ul>
+<li>同一个父亲的话，直接比数值；父亲不同，就向上追溯父亲到同一个上下文。</li>
+</ul>
+</li>
+<li>层叠顺序<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xODcyMDM1OC0xMjlhMmMzMWIyN2Y3YzU1LnBuZw" alt="img"></li>
+</ul>
+</li>
+</ul>
+<h3 id="修复safari中组件层级z-index失效问题"><a href="#修复safari中组件层级z-index失效问题" class="headerlink" title="修复safari中组件层级z-index失效问题"></a>修复safari中组件层级z-index失效问题</h3><!--1.17～1.31-->
+<ul>
+<li>遇到的困难<ul>
+<li>在safari中，设计的z-index层级全部无效，导致组件层级错乱。</li>
+</ul>
+</li>
+<li>解决方法<ul>
+<li>把被挡住的组件用translate3d向上挪了一点<img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304150815844.png" alt="image-20210304150815844" style="zoom:50%;"></li>
+</ul>
+</li>
+<li>学到的东西<ul>
+<li>safari层级渲染的特殊<del>奇葩</del>机制3dtransform<ul>
+<li><a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2016/08/safari-3d-transform-z-index/">Safari 3D transform变换z-index层级渲染异常的研究</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="修复学生端看不到教师课件输入文本问题"><a href="#修复学生端看不到教师课件输入文本问题" class="headerlink" title="修复学生端看不到教师课件输入文本问题"></a>修复学生端看不到教师课件输入文本问题</h3><!--2.21～2.23-->
+<ul>
+<li>解决方法<ul>
+<li>学生端增加绘制文本函数<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304151753542.png" alt="image-20210304151753542"></li>
+</ul>
+</li>
+</ul>
+<h2 id="增加功能"><a href="#增加功能" class="headerlink" title="增加功能"></a>增加功能</h2><h3 id="增加镜像模式功能"><a href="#增加镜像模式功能" class="headerlink" title="增加镜像模式功能"></a>增加镜像模式功能</h3><!--1.17～1.24-->
+<ul>
+<li>解决方法<ul>
+<li>store里增加useMirrorMode参数，在设置界面的提交动作里更新。</li>
+<li>样式中使用transform: rotateY(180deg)实现镜像翻转</li>
+</ul>
+</li>
+</ul>
+<h3 id="增加通过配置进教室链接参数直接禁用学生的举手功能"><a href="#增加通过配置进教室链接参数直接禁用学生的举手功能" class="headerlink" title="增加通过配置进教室链接参数直接禁用学生的举手功能"></a>增加通过配置进教室链接参数直接禁用学生的举手功能</h3><!--1.24～1.31-->
+<ul>
+<li>解决方法<ul>
+<li>写了一个从url中通过参数名得到参数值的方法<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304163315136.png" alt="image-20210304163315136"></li>
+<li>在index中调用它<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304163344640.png" alt="image-20210304163344640"></li>
+</ul>
+</li>
+<li>学到的内容<ul>
+<li>如何从url中得到查询参数（BOM）</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%971/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="TriNauD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三角的技术笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%971/" class="post-title-link" itemprop="url">前端实习心得1 - 准备工作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-04 22:45:48 / Modified: 23:29:36" itemprop="dateCreated datePublished" datetime="2021-03-04T22:45:48+08:00">2021-03-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="工具和软件准备"><a href="#工具和软件准备" class="headerlink" title="工具和软件准备"></a>工具和软件准备</h2><h3 id="React开发环境搭建"><a href="#React开发环境搭建" class="headerlink" title="React开发环境搭建"></a>React开发环境搭建</h3><ul>
+<li><p>参考资料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.webpackjs.com/concepts/">webpack中文文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/create-a-new-react-app.html">React中文文档-创建新的 React 应用</a></li>
+</ul>
+</li>
+<li><p>实践效果</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/TriNauD/webpack-demo">webpack-demo</a></li>
+</ul>
+</li>
+<li><p>遇到的问题</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/webpack/webpack-dev-server/issues/2759">Error: Cannot find module ‘webpack-cli/bin/config-yargs’ #2759</a></li>
+</ul>
+</li>
+<li><p>学到的内容</p>
+<ul>
+<li>手动打造React工具链（包管理器npm+打包器webpack+编译器Babel）</li>
+<li>node.js&amp;npm的作用和关系</li>
+</ul>
+</li>
+</ul>
+<h3 id="Iterm2-zsh配置及美化"><a href="#Iterm2-zsh配置及美化" class="headerlink" title="Iterm2 zsh配置及美化"></a>Iterm2 zsh配置及美化</h3><ul>
+<li>参考资料<ul>
+<li> <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/405956cdaca6">ITerm2配置-让你的mac命令行更加丰富高效</a></li>
+</ul>
+</li>
+<li>效果<ul>
+<li><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%971/image-20210304110406237.png" alt="image-20210304110406237"></li>
+</ul>
+</li>
+<li>学到的内容<ul>
+<li>zsh与bash的关系与区别</li>
+<li>修改.bash_profile配置环境变量<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cyberciti.biz/faq/appleosx-bash-unix-change-set-path-environment-variable/?__cf_chl_captcha_tk__=750f9355d34020010901297d234e41dd32b9913d-1614829155-0-Ac62RlEt_Jzzt1mRUON5G8GVA7fYqxymOmW32eJfbz58nFEJkXl-rqUK36ZQAFIoWDCIeINJroVfnuKvCKGNH3FMH36QlE8BRh8KS_J1IeQzhl7yVlhpNYcSotmGog1Kk_gWP8A5hKiz950vZZtWKv4Q5ixM0nbtQzPH6m12Pgv3xim84TV7h2RctzQE4bGYob1Vm_OHsP51pz4_qLXBRMP1SLiNomfee8aEZ2iIYbQUV91lRt2VV7KhSg8SkVp8RnA123OmsL8MumaGurQjYMbDg6toganCCYugWpEE9Z7xq2i6I7NiOrWXXABh9bhJ81D_axlau_ur45EX-gJastqaE93GSjbCzJoEU8bhQ2BthHT5m1VReX5fnTyoprljIPbTJGb-sKXCv2rPXzDf_px40znV65zuC-jdvUpWQokOwZmHhLn_rvpREq2Es-DuWsenAaYExAdxHkWyiUQxddhulM3RzE2spza18rL38sqNHhie2GSyDpxn87HQ9KgeK-CtxcGS2yBnsrRCwxKlhCatG1RG_UmczNg779P69JWwmgZCVjaQmqE-Rx9iKXhyWS6gMZIOtxnfynFQgBS0AYBLDGis0ZhAEbDX07RN6QHE_2KgKO8SRJxJRCEYrh8BRabf6s4sDFJkCncDn6-uZatPdxZw_ccaGkyv60bqpsIi">Mac OS X: Set / Change $PATH Variable</a></li>
+</ul>
+</li>
+<li>终端操作&amp;常用命令</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码评审工具Arcanist安装配置"><a href="#代码评审工具Arcanist安装配置" class="headerlink" title="代码评审工具Arcanist安装配置"></a>代码评审工具Arcanist安装配置</h3><ul>
+<li>学到的内容<ul>
+<li><p>代码提交/审核/合并流程</p>
+</li>
+<li><p>comment规范</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.4/">约定式提交</a></li>
+</ul>
+<h3 id="代码规范工具Eslint配置"><a href="#代码规范工具Eslint配置" class="headerlink" title="代码规范工具Eslint配置"></a>代码规范工具Eslint配置</h3></li>
+</ul>
+</li>
+<li>学到的内容<ul>
+<li>Js代码规范</li>
+<li>IDE（webstorm）的eslint和arc的lint区别</li>
+</ul>
+</li>
+</ul>
+<h2 id="知识准备"><a href="#知识准备" class="headerlink" title="知识准备"></a>知识准备</h2><h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><ul>
+<li><p>JavaScript</p>
+<ul>
+<li>基础<ul>
+<li>红书看了前6章</li>
+</ul>
+</li>
+<li>ES6<ul>
+<li><a target="_blank" rel="noopener" href="http://caibaojian.com/es6/">ES6入门文档</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>React</p>
+<ul>
+<li>基础<ul>
+<li><a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/hello-world.html">React中文文档</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="网络编程与传输"><a href="#网络编程与传输" class="headerlink" title="网络编程与传输"></a>网络编程与传输</h3><p>从浏览器输入url到渲染出页面经历的整个过程<br>（还在完善知识体系和概念理解中，会在后续文章中以这整个流程顺序为基础展开详写）</p>
+<h3 id="音视频流"><a href="#音视频流" class="headerlink" title="音视频流"></a>音视频流</h3><p><del>说来惭愧虽然这是公司的主要领域但我接触得很少而且并没有怎么学……</del></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -169,10 +447,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-03-03 22:53:29 / Modified: 23:03:05" itemprop="dateCreated datePublished" datetime="2021-03-03T22:53:29+08:00">2021-03-03</time>
+              <time title="Created: 2021-03-03 22:53:29" itemprop="dateCreated datePublished" datetime="2021-03-03T22:53:29+08:00">2021-03-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-04 22:48:29" itemprop="dateModified" datetime="2021-03-04T22:48:29+08:00">2021-03-04</time>
+              </span>
 
           
 
@@ -327,137 +611,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/26/testPost/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="TriNauD">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三角的技术笔记">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/26/testPost/" class="post-title-link" itemprop="url">testPost</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-02-26 23:46:31 / Modified: 23:50:03" itemprop="dateCreated datePublished" datetime="2021-02-26T23:46:31+08:00">2021-02-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="My-test-post"><a href="#My-test-post" class="headerlink" title="My test post"></a>My test post</h2><h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes:"></a>Notes:</h4><p>Welcome to … err anyways. Hello. Let me just get into word of warnings. This might be Omegaverse but, don’t worry if you dislike smut, the smut is pretty vanilla - hence it’s M-rated, though I need to repeat that this is Omegaverse so we have … futanari, okay. And if you’re not familiar with this Omegaverse, go search it, google is your friend!</p>
-<p>Why Omegaverse and RisaSayo? I wonder myself, and it ended up being expanded after the usual prompt conversation … I do hope that this can be … quite some read to relieve past time, if not.</p>
-<p>Enjoy then? And see you!</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/26/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="TriNauD">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三角的技术笔记">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/26/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-26 22:24:48" itemprop="dateCreated datePublished" datetime="2021-02-26T22:24:48+08:00">2021-02-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
 
@@ -529,7 +682,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

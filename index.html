@@ -114,6 +114,21 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -169,10 +184,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-03-04 23:07:52 / Modified: 23:28:23" itemprop="dateCreated datePublished" datetime="2021-03-04T23:07:52+08:00">2021-03-04</time>
+              <time title="Created: 2021-03-04 23:07:52" itemprop="dateCreated datePublished" datetime="2021-03-04T23:07:52+08:00">2021-03-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-05 00:11:59" itemprop="dateModified" datetime="2021-03-05T00:11:59+08:00">2021-03-05</time>
+              </span>
 
           
 
@@ -185,85 +206,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="修复bug"><a href="#修复bug" class="headerlink" title="修复bug"></a>修复bug</h2><h3 id="修复深色模式下组件样式问题"><a href="#修复深色模式下组件样式问题" class="headerlink" title="修复深色模式下组件样式问题"></a>修复深色模式下组件样式问题</h3><!--12.20～12.27 & 1.24～1.31-->
-<ul>
-<li><p>解决方式</p>
-<ul>
-<li>在高阶组件hoc中使用store里的数据，传进被包裹组件中，用classnames库动态判断是否为组件添加class。<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304141748579.png" alt="image-20210304141748579"></li>
-</ul>
-</li>
-<li><p>遇到困难</p>
-<ul>
-<li>困难描述：<ul>
-<li>某个background color需要useDarkMode和highlight共同决定，而嵌套条件选择语句不被允许。</li>
-</ul>
-</li>
-<li>解决方法：<ul>
-<li>在该组件类中写了一个专门决定background color的函数并在return的组件的属性中调用。<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304143746664.png" alt="image-20210304143746664"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="修复lint问题"><a href="#修复lint问题" class="headerlink" title="修复lint问题"></a>修复lint问题</h3><!--12.20～12.27-->
-<p>这个问题我没法解释，应该是改了一下版本。<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304144241022.png" alt="image-20210304144241022" style="zoom:50%;"></p>
-<h3 id="修复播放遮罩组件层级混乱问题"><a href="#修复播放遮罩组件层级混乱问题" class="headerlink" title="修复播放遮罩组件层级混乱问题"></a>修复播放遮罩组件层级混乱问题</h3><!--1.12-->
-<ul>
-<li>学到的内容<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/llll789789/article/details/97562099">彻底搞懂CSS层叠上下文、层叠等级、层叠顺序、z-index</a><ul>
-<li>层叠上下文<ul>
-<li>同一个父亲的话，直接比数值；父亲不同，就向上追溯父亲到同一个上下文。</li>
-</ul>
-</li>
-<li>层叠顺序<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xODcyMDM1OC0xMjlhMmMzMWIyN2Y3YzU1LnBuZw" alt="img"></li>
-</ul>
-</li>
-</ul>
-<h3 id="修复safari中组件层级z-index失效问题"><a href="#修复safari中组件层级z-index失效问题" class="headerlink" title="修复safari中组件层级z-index失效问题"></a>修复safari中组件层级z-index失效问题</h3><!--1.17～1.31-->
-<ul>
-<li>遇到的困难<ul>
-<li>在safari中，设计的z-index层级全部无效，导致组件层级错乱。</li>
-</ul>
-</li>
-<li>解决方法<ul>
-<li>把被挡住的组件用translate3d向上挪了一点<img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304150815844.png" alt="image-20210304150815844" style="zoom:50%;"></li>
-</ul>
-</li>
-<li>学到的东西<ul>
-<li>safari层级渲染的特殊<del>奇葩</del>机制3dtransform<ul>
-<li><a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2016/08/safari-3d-transform-z-index/">Safari 3D transform变换z-index层级渲染异常的研究</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="修复学生端看不到教师课件输入文本问题"><a href="#修复学生端看不到教师课件输入文本问题" class="headerlink" title="修复学生端看不到教师课件输入文本问题"></a>修复学生端看不到教师课件输入文本问题</h3><!--2.21～2.23-->
-<ul>
-<li>解决方法<ul>
-<li>学生端增加绘制文本函数<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304151753542.png" alt="image-20210304151753542"></li>
-</ul>
-</li>
-</ul>
-<h2 id="增加功能"><a href="#增加功能" class="headerlink" title="增加功能"></a>增加功能</h2><h3 id="增加镜像模式功能"><a href="#增加镜像模式功能" class="headerlink" title="增加镜像模式功能"></a>增加镜像模式功能</h3><!--1.17～1.24-->
-<ul>
-<li>解决方法<ul>
-<li>store里增加useMirrorMode参数，在设置界面的提交动作里更新。</li>
-<li>样式中使用transform: rotateY(180deg)实现镜像翻转</li>
-</ul>
-</li>
-</ul>
-<h3 id="增加通过配置进教室链接参数直接禁用学生的举手功能"><a href="#增加通过配置进教室链接参数直接禁用学生的举手功能" class="headerlink" title="增加通过配置进教室链接参数直接禁用学生的举手功能"></a>增加通过配置进教室链接参数直接禁用学生的举手功能</h3><!--1.24～1.31-->
-<ul>
-<li>解决方法<ul>
-<li>写了一个从url中通过参数名得到参数值的方法<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304163315136.png" alt="image-20210304163315136"></li>
-<li>在index中调用它<br><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/image-20210304163344640.png" alt="image-20210304163344640"></li>
-</ul>
-</li>
-<li>学到的内容<ul>
-<li>如何从url中得到查询参数（BOM）</li>
-</ul>
-</li>
-</ul>
-
+          <p>本人在公司前端实习时做的一些工作，主要是新旧版大班的bug修复和功能的添加。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%972/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -313,7 +264,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-05 00:05:57" itemprop="dateModified" datetime="2021-03-05T00:05:57+08:00">2021-03-05</time>
+                <time title="Modified: 2021-03-05 00:11:14" itemprop="dateModified" datetime="2021-03-05T00:11:14+08:00">2021-03-05</time>
               </span>
 
           
@@ -327,91 +278,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="工具和软件准备"><a href="#工具和软件准备" class="headerlink" title="工具和软件准备"></a>工具和软件准备</h2><h3 id="React开发环境搭建"><a href="#React开发环境搭建" class="headerlink" title="React开发环境搭建"></a>React开发环境搭建</h3><ul>
-<li><p>参考资料</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.webpackjs.com/concepts/">webpack中文文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/create-a-new-react-app.html">React中文文档-创建新的 React 应用</a></li>
-</ul>
-</li>
-<li><p>实践效果</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/TriNauD/webpack-demo">webpack-demo</a></li>
-</ul>
-</li>
-<li><p>遇到的问题</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/webpack/webpack-dev-server/issues/2759">Error: Cannot find module ‘webpack-cli/bin/config-yargs’ #2759</a></li>
-</ul>
-</li>
-<li><p>学到的内容</p>
-<ul>
-<li>手动打造React工具链（包管理器npm+打包器webpack+编译器Babel）</li>
-<li>node.js&amp;npm的作用和关系</li>
-</ul>
-</li>
-</ul>
-<h3 id="Iterm2-zsh配置及美化"><a href="#Iterm2-zsh配置及美化" class="headerlink" title="Iterm2 zsh配置及美化"></a>Iterm2 zsh配置及美化</h3><ul>
-<li>参考资料<ul>
-<li> <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/405956cdaca6">ITerm2配置-让你的mac命令行更加丰富高效</a></li>
-</ul>
-</li>
-<li>效果<ul>
-<li><img src="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%971/image-20210304110406237.png" alt="image-20210304110406237"></li>
-</ul>
-</li>
-<li>学到的内容<ul>
-<li>zsh与bash的关系与区别</li>
-<li>修改.bash_profile配置环境变量<ul>
-<li><a target="_blank" rel="noopener" href="https://www.cyberciti.biz/faq/appleosx-bash-unix-change-set-path-environment-variable/?__cf_chl_captcha_tk__=750f9355d34020010901297d234e41dd32b9913d-1614829155-0-Ac62RlEt_Jzzt1mRUON5G8GVA7fYqxymOmW32eJfbz58nFEJkXl-rqUK36ZQAFIoWDCIeINJroVfnuKvCKGNH3FMH36QlE8BRh8KS_J1IeQzhl7yVlhpNYcSotmGog1Kk_gWP8A5hKiz950vZZtWKv4Q5ixM0nbtQzPH6m12Pgv3xim84TV7h2RctzQE4bGYob1Vm_OHsP51pz4_qLXBRMP1SLiNomfee8aEZ2iIYbQUV91lRt2VV7KhSg8SkVp8RnA123OmsL8MumaGurQjYMbDg6toganCCYugWpEE9Z7xq2i6I7NiOrWXXABh9bhJ81D_axlau_ur45EX-gJastqaE93GSjbCzJoEU8bhQ2BthHT5m1VReX5fnTyoprljIPbTJGb-sKXCv2rPXzDf_px40znV65zuC-jdvUpWQokOwZmHhLn_rvpREq2Es-DuWsenAaYExAdxHkWyiUQxddhulM3RzE2spza18rL38sqNHhie2GSyDpxn87HQ9KgeK-CtxcGS2yBnsrRCwxKlhCatG1RG_UmczNg779P69JWwmgZCVjaQmqE-Rx9iKXhyWS6gMZIOtxnfynFQgBS0AYBLDGis0ZhAEbDX07RN6QHE_2KgKO8SRJxJRCEYrh8BRabf6s4sDFJkCncDn6-uZatPdxZw_ccaGkyv60bqpsIi">Mac OS X: Set / Change $PATH Variable</a></li>
-</ul>
-</li>
-<li>终端操作&amp;常用命令</li>
-</ul>
-</li>
-</ul>
-<h3 id="代码评审工具Arcanist安装配置"><a href="#代码评审工具Arcanist安装配置" class="headerlink" title="代码评审工具Arcanist安装配置"></a>代码评审工具Arcanist安装配置</h3><ul>
-<li>学到的内容<ul>
-<li>代码提交/审核/合并流程</li>
-<li>comment规范<ul>
-<li><a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.4/">约定式提交</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="代码评审工具Eslint安装配置"><a href="#代码评审工具Eslint安装配置" class="headerlink" title="代码评审工具Eslint安装配置"></a>代码评审工具Eslint安装配置</h3><ul>
-<li>学到的内容<ul>
-<li>JS代码规范</li>
-<li>IDE和arc的lint区别</li>
-</ul>
-</li>
-</ul>
-<h2 id="知识准备"><a href="#知识准备" class="headerlink" title="知识准备"></a>知识准备</h2><h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><ul>
-<li>JS<ul>
-<li>基础<ul>
-<li>红书看了前6章</li>
-</ul>
-</li>
-<li>ES6<ul>
-<li><a target="_blank" rel="noopener" href="http://caibaojian.com/es6/">ES6入门文档</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>React<ul>
-<li>基础<ul>
-<li><a target="_blank" rel="noopener" href="https://reactjs.bootcss.com/docs/hello-world.html">React中文文档</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="网络编程与传输"><a href="#网络编程与传输" class="headerlink" title="网络编程与传输"></a>网络编程与传输</h3><p>从浏览器输入url到渲染出页面经历的整个过程<br>（还在完善知识体系和概念理解中，会在后续文章中以这整个流程顺序为基础展开详写）</p>
-<h3 id="音视频流"><a href="#音视频流" class="headerlink" title="音视频流"></a>音视频流</h3><p><del>说来惭愧虽然这是公司的主要领域但我接触得很少而且并没有怎么学……</del></p>
-
+          <p>本人在公司前端实习时做的一些准备工作，包括软件的安装配置和基础知识的学习。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/04/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%BF%83%E5%BE%971/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -444,7 +319,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">Windows面向新手git/github安装配置详细指南</a>
+            <a href="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">Windows面向新手git&github安装配置详细指南</a>
         </h2>
 
         <div class="post-meta">
@@ -461,7 +336,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-04 22:48:29" itemprop="dateModified" datetime="2021-03-04T22:48:29+08:00">2021-03-04</time>
+                <time title="Modified: 2021-03-05 00:13:49" itemprop="dateModified" datetime="2021-03-05T00:13:49+08:00">2021-03-05</time>
               </span>
 
           
@@ -475,134 +350,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="git安装配置："><a href="#git安装配置：" class="headerlink" title="git安装配置："></a>git安装配置：</h4><p>启动git setup.exe安装，一路next即可。</p>
-<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233210461.png" alt="image-20200506233210461" style="zoom:50%;">
-
-
-
-<p>测试是否安装完毕，在cmd（命令提示符）中输入git，如果像下图一样出现很多用法的提示，说明已经安装完毕。</p>
-<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233524730.png" alt="image-20200506233524730" style="zoom:50%;">
-
-<h4 id="设置ssh密钥"><a href="#设置ssh密钥" class="headerlink" title="设置ssh密钥:"></a>设置ssh密钥:</h4><ul>
-<li><p>在cmd生成ssh密钥</p>
-<ul>
-<li><p>配置用户名</p>
-<p>cmd输入如下命令(username是你注册的Github用户名):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506235424303.png" alt="image-20200506235424303"></p>
-</li>
-<li><p>配置邮箱</p>
-<p>cmd输入如下命令(usermail是你注册的Github邮箱):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;usermail&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506235346002.png" alt="image-20200506235346002"></p>
-</li>
-<li><p>生成ssh</p>
-<p>cmd输入如下命令生成ssh，让输入就敲回车即可，总共三个回车。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506235823667.png" alt="image-20200506235823667"></p>
-<p>在上述命令行中显示的保存的位置找到如下两个文件：</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506235932072.png" alt="image-20200506235932072"></p>
-<p>打开id_rsa.pub，复制其中内容：</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507000112012.png" alt="image-20200507000112012"></p>
-</li>
-</ul>
-</li>
-<li><p>在Github配置ssh密钥</p>
-<p>在Github点击自己头像-&gt;settings-&gt;SSH and GPG keys-&gt;New SSH key</p>
-</li>
-</ul>
-<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233848382.png" alt="image-20200506233848382" style="zoom:50%;">
-
-<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233940438.png" alt="image-20200506233940438" style="zoom:50%;">
-
-<p>​    title可以自己随便取一个名字，key中把刚才复制的ssh粘贴进去即可。点击Add SSH key便完成了ssh的添加：    <img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507000311098.png" alt="image-20200507000311098"></p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507000432216.png" alt="image-20200507000432216"></p>
-<p>测试是否配置成功。cmd中输入如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>出现如下说明成功：</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507001229824.png" alt="image-20200507001229824"></p>
-<p>如果出现如下错误，就把原来的两个id_rsa文件都删掉，命令行重复<code>ssh-keygen -t rsa</code>命令生成一个新的，github上的ssh也同样删除重建。</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507000856744.png" alt="image-20200507000856744"></p>
-<h4 id="建立第一个版本库"><a href="#建立第一个版本库" class="headerlink" title="建立第一个版本库"></a>建立第一个版本库</h4><ul>
-<li><p>新建远程库</p>
-<p>头像-&gt;Your repositories可以看到你所有仓库，点击new可以新建仓库。新建的流程你已经熟悉，不再赘述。</p>
-</li>
-</ul>
-<img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200506233848382.png" alt="image-20200506233848382" style="zoom:50%;">
-
-<ul>
-<li><p>clone远程仓库到本地</p>
-<p>点开你新建的远程仓库。点击Clone or Download：</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507002031663.png" alt="image-20200507002031663"></p>
-<p>你有两种方式clone这个仓库，直接下载ZIP或者命令行clone。命令行clone的方法如下</p>
-<ul>
-<li><p>命令行导航到你想要存放本地仓库的目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列出当前目录下的文件</span></span><br><span class="line">dir</span><br><span class="line"></span><br><span class="line"><span class="comment">#进入目录</span></span><br><span class="line"><span class="built_in">cd</span> [folder]</span><br><span class="line"></span><br><span class="line"><span class="comment">#返回上级目录</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"></span><br><span class="line"><span class="comment">#访问别的磁盘（如D:\）</span></span><br><span class="line">D:</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507002834918.png" alt="image-20200507002834918"></p>
-</li>
-<li><p>复制远程仓库的HTTPS/SSH key</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507003019857.png" alt="image-20200507003019857"></p>
-</li>
-<li><p>命令行clone</p>
-<p>命令行输入如下命令，git clone [复制的远程库的HTTPS/SSH key]：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:username/RepositoryName.git</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507003410852.png" alt="image-20200507003410852"></p>
-</li>
-<li><p>查看clone下来的本地库</p>
-<p>可以看到那个位置下出现了与远程库同名的文件夹，里面有远程库里的内容。</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507003515442.png" alt="image-20200507003515442"></p>
-<p>勾选“显示隐藏文件夹“后会看到.git文件夹，说明这个MyWorks是一个有git版本管理的文件夹。</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507003826324.png" alt="image-20200507003826324"></p>
-<p>在这个文件夹里就可以放入你需要版本管理的文件和文件夹了。</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507004321512.png" alt="image-20200507004321512"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="git版本管理基本操作"><a href="#git版本管理基本操作" class="headerlink" title="git版本管理基本操作"></a>git版本管理基本操作</h4><p>在MyWorks目录下输入命令查看git状态：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507004721133.png" alt="image-20200507004721133"></p>
-<p>这说明，worl1.txt、worl2.docx和文件夹work_test/都是新出现在这个文件夹里的文件，它们是untracked（未被追踪）的。</p>
-<p>输入如下命令把它们加入追踪，也就是加入版本管理：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add [filename/folder_name]</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507005136196.png" alt="image-20200507005136196">‘</p>
-<p>再次输入<code>git status</code>查看到这几个文件已经变绿，被探测到更改。</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507005308543.png" alt="image-20200507005308543"></p>
-<p>输入如下命令提交这些文件的更改：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;你对这次提交的注释&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507005518640.png" alt="image-20200507005518640"></p>
-<p>输入<code>git log</code>查看你提交的更改记录，你可以看到提交时间和注释。</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507005623129.png" alt="image-20200507005623129"></p>
-<h4 id="push（推送）到远程仓库（Github上的仓库）"><a href="#push（推送）到远程仓库（Github上的仓库）" class="headerlink" title="push（推送）到远程仓库（Github上的仓库）"></a>push（推送）到远程仓库（Github上的仓库）</h4><ul>
-<li><p>设置远程（可跳过）</p>
-<p>cmd中输入<code>git remote</code>可以查看到你当前的远程：</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507010511221.png" alt="image-20200507010511221"></p>
-<p>因为是从远程clone下来的，所以已经有一个默认的origin远程名链接到远程库。</p>
-<p>如果需要新建远程，输入如下命令即可：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:username/RepositoryName.git</span><br></pre></td></tr></table></figure>
-
-<p>(origin只是给这个远程起的名字，可以自己起)</p>
-<p>(git@github.com:username/RepositoryName.git是你远程仓库复制的那个ssh key)</p>
-</li>
-<li><p>push本地仓库到远程</p>
-<p>输入如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push 远程名</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507010802725.png" alt="image-20200507010802725"></p>
-<p>在github上便可以看到更改的文件已经上传：</p>
-<p><img src="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/image-20200507010930164.png" alt="image-20200507010930164"></p>
-</li>
-</ul>
-
+          <p>为新手编写的git&github的详细安装配置指南</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/03/Windows%E9%9D%A2%E5%90%91%E6%96%B0%E6%89%8Bgit-github%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

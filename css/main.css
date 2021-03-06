@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #aa3793;
+  background: #815d0d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1511,6 +1511,16 @@ pre .javascript .function {
     left: 20px;
     opacity: 0.8;
   }
+}
+.reading-progress-bar {
+  background: #37c6c0;
+  display: block;
+  height: 3px;
+  left: 0;
+  position: fixed;
+  width: 0;
+  z-index: 1500;
+  top: 0;
 }
 .post-body {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -2565,7 +2575,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 body {
-  background: url("/images/background1.png");
+  background: url("https://api.uixsj.cn/bing/bing.php");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -2577,6 +2587,9 @@ body {
 .header-inner {
   opacity: 0.8;
 }
-#theme-link {
-  color: #fff;
+.theme-link {
+  color: #ccc;
+}
+.translate-link {
+  color: #ccc;
 }
